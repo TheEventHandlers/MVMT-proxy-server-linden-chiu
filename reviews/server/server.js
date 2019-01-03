@@ -9,6 +9,6 @@ app.use('/watches/:wid', express.static('public'));
 
 app.use('/api/watches/:wid/reviews', proxy({ target: 'http://localhost:3004', changeOrigin: true }));
 
-app.listen(3004, () => {
+app.listen(3000, () => {
   console.log('listening on port 3000...');
 });
