@@ -9,7 +9,8 @@
   },
   "scripts": {
     "seedDB": "node database/data_generation/generateReviewData.js & exit",
-    "start": "webpack -d --watch | nodemon server/index.js",
+    "build": "webpack",
+    "start": "nodemon ./server/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"

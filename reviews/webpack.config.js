@@ -1,7 +1,9 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, '/client/src/index.jsx'),
+  context: __dirname + '/client',
+  entry: './index.js',
   module: {
     rules: [
       {
@@ -17,7 +19,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/client/dist'),
-  },
+    path: __dirname + '/public',
+    filename: 'app.js',
+  }
 };
