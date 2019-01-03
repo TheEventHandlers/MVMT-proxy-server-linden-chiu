@@ -1,12 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
+const proxy = require('http-proxy-middleware');
+
 const app = express();
-const port = process.env.PORT || 3004;
 
-app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(morgan('tiny'));
+app.use('/watches/:wid', express.static('public'));
 
-app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+app.use('/api/watches/:wid/reviews', proxy({ target: 'http://localhost:3004', changeOrigin: true }));
+
+app.listen(3004, () => {
+  console.log('listening on port 3000...');
 });

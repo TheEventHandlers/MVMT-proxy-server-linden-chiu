@@ -52,6 +52,7 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.14.0",
     "faker": "^4.1.0",
+    "http-proxy-middleware": "^0.19.1",
     "jest": "^23.6.0",
     "lorem-ipsum": "^1.0.6",
     "morgan": "^1.9.1",
